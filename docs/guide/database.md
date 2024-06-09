@@ -15,9 +15,14 @@ const (
 )
 ```
 
-比如，你想在你的程序中获取到数据库密码，你首先需要在 `config.yaml`中定义你的字段
+你首先需要在 `config.yaml`中配置相关的参数
 
-```go
+```yaml
 database:
-  password: "YOUR_PASSWORD"
+    host: YOUR_DATABASE_HOST		#必填，你的数据库主机名带端口，如：localhost:3306
+    name: YOUR_DATABASE_NAME		#必填，你的数据库名
+    user: YOUR_DATABASE_USER		#必填，你的数据库用户
+    password: YOUR_PASSWORD		#必填，你的数据库密码
+    insert_initialization_data: false 	#选填，是否插入初始化数据，默认为false
+    timeout_reconnection_interval: 10 	#选填，数据库未连接自动重连间隔，单位：秒，默认为10s
 ```

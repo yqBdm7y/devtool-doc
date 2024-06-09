@@ -26,3 +26,37 @@ database:
     insert_initialization_data: false 	#选填，是否插入初始化数据，默认为false
     timeout_reconnection_interval: 10 	#选填，数据库未连接自动重连间隔，单位：秒，默认为10s
 ```
+
+## 调用
+
+使用下面的方法来调用数据库
+
+```go
+Config[InterfaceConfig]{}.Get()
+```
+
+其中 `InterfaceConfig`代表你需要用哪种第三方库来实现你的业务逻辑
+
+## 库
+
+### LibraryGorm
+
+我们把GORM简单的封装成了 `LibraryGorm`这个库，这个库实现了一些简单的方法，以便于快速开发
+
+当然，你也可以使用下面的方式来获取 `gorm.DB`全部的方法
+
+```go
+d.Database[d.LibraryGorm]{}.Get().DB
+```
+
+#### GenerateFuzzyQueries
+
+目前该方法只支持MySQL，
+
+```go
+GenerateFuzzyQueries(tx, map[string]string{"name": "John", "sex": "female"})
+```
+
+#### PaginateV2
+
+想了解这个方法，可以先参考一下[GORM的官方写法](https://gorm.io/docs/scopes.html#Pagination)

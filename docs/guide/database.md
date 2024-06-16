@@ -37,9 +37,7 @@ Config[InterfaceConfig]{}.Get()
 
 其中 `InterfaceConfig`代表你需要用哪种第三方库来实现你的业务逻辑
 
-## 库
-
-### LibraryGorm
+## 库-LibraryGorm
 
 我们把GORM简单的封装成了 `LibraryGorm`这个库，这个库实现了一些简单的方法，以便于快速开发
 
@@ -49,22 +47,22 @@ Config[InterfaceConfig]{}.Get()
 d.Database[d.LibraryGorm]{}.Get().DB
 ```
 
-#### 插入初始数据
+### 插入初始数据
 
 我们使用 `func (l LibraryGorm) InsertInitializationData(list ...interface{}) (initialized bool, err error)` 这个方法来插入初始化数据
 
-##### 触发条件
+**触发条件**
 
 `database.insert_initialization_data` 该配置项需要设置为 `true`，才会触发此方法，否则则跳过。
-
-触发此方法后，该配置值会变为 `false`，防止下次运行程序重复插入初始化数据
 
 ```yaml
 database:
     insert_initialization_data: true
 ```
 
-##### 参数
+触发此方法后，该配置值会变为 `false`，防止下次运行程序重复插入初始化数据
+
+**参数**
 
 参数 `list` 是传入的待初始化的数据，可以传入多组数据
 
@@ -88,7 +86,7 @@ func InsertInitData() {
 }
 ```
 
-##### 返回值
+**返回值**
 
 `initialized` 返回该函数是否执行了初始化了数据，若执行了返回 `true`
 
@@ -100,7 +98,7 @@ func InsertInitData() {
 
 `err` 只有在执行插入数据库失败的时候，或更改 `database.insert_initialization_data` 该配置项为 `false` 失败的情况下返回错误。若此方法被跳过，则不返回错误。
 
-#### GenerateFuzzyQueries
+### GenerateFuzzyQueries
 
 目前该方法只支持MySQL，
 
@@ -108,6 +106,6 @@ func InsertInitData() {
 GenerateFuzzyQueries(tx, map[string]string{"name": "John", "sex": "female"})
 ```
 
-#### PaginateV2
+### PaginateV2
 
 想了解这个方法，可以先参考一下[GORM的官方写法](https://gorm.io/docs/scopes.html#Pagination)

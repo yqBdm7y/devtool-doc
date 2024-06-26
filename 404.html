@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-rc.14" />
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+
+      html.dark {
+        --c-bg: #22272e;
+      }
+
+      html,
+      body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme')
+      const systemDarkMode =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+        document.documentElement.classList.toggle('dark', true)
+      }
+    </script>
+    <title>VuePress</title><meta name="description" content="My first VuePress Site">
+    <link rel="preload" href="/devtool-doc/assets/style-BDZmSSuf.css" as="style"><link rel="stylesheet" href="/devtool-doc/assets/style-BDZmSSuf.css">
+    <link rel="modulepreload" href="/devtool-doc/assets/app-C-0oiUrw.js"><link rel="modulepreload" href="/devtool-doc/assets/404.html-C1bNFOKd.js">
+    <link rel="prefetch" href="/devtool-doc/assets/index.html-CAQTKVPf.js" as="script"><link rel="prefetch" href="/devtool-doc/assets/get-started.html-40Wk0cv2.js" as="script"><link rel="prefetch" href="/devtool-doc/assets/database.html-DAnPXf7Y.js" as="script"><link rel="prefetch" href="/devtool-doc/assets/gin.html-h7yNZtlw.js" as="script">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><main class="page"><div class="theme-default-content"><h1>404</h1><blockquote>That&#39;s a Four-Oh-Four.</blockquote><a class="route-link" href="/devtool-doc/">Take me home</a></div></main></div><!--[--><!----><!--]--><!--]--></div>
+    <script type="module" src="/devtool-doc/assets/app-C-0oiUrw.js" defer></script>
+  </body>
+</html>
